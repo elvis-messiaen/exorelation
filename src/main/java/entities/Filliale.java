@@ -17,18 +17,8 @@ public class Filliale {
     @JoinColumn(name = "entreprise_entreprise_id")
     private Entreprise entreprise;
 
-
-    @ManyToMany(cascade = CascadeType.ALL)
-    @JoinTable(
-            name = "filliale_has_secteur",
-            joinColumns = @JoinColumn(name = "filliale_id"),
-            inverseJoinColumns = @JoinColumn(name = "secteur_id")
-
-    )
-    private Set<Secteur> secteurs = new HashSet<>();
-
     @ManyToMany(mappedBy = "filliales")
-    private Set<Secteur> secteurss = new HashSet<>();
+    private Set<Secteur> secteurs = new HashSet<>();
 
     public  void addSecteur (Secteur secteur){
     this.secteurs.add(secteur);
@@ -66,11 +56,5 @@ public class Filliale {
         this.secteurs = secteurs;
     }
 
-    public Set<Secteur> getSecteurss() {
-        return secteurss;
-    }
 
-    public void setSecteurss(Set<Secteur> secteurss) {
-        this.secteurss = secteurss;
-    }
 }

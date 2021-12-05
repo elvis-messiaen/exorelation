@@ -41,8 +41,6 @@ public class FillialeManager {
         Entreprise entreprise = new Entreprise();
         entreprise.setNom("entreprise");
 
-
-
         // entreprise => dans filliale
         filliale.setEntreprise(entreprise);
 
@@ -71,8 +69,13 @@ public class FillialeManager {
         filliale.addSecteur(secteur);
         secteur.addFilliale(filliale);
 
+        session.save(filliale);
         session.save(secteur);
-        
+        //session.save(employes);
+
+
+
+
         session.getTransaction().commit();
         session.close();
         sessionFactory.close();

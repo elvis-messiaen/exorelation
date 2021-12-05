@@ -24,7 +24,7 @@ public class Employes {
     private  String adresse;
 
     @ManyToOne
-    @JoinColumn(name = "filliale_id")
+    @JoinColumn(name = "secteur_secteur_id")
     private Secteur secteur;
 
     public Long getId_employes() {

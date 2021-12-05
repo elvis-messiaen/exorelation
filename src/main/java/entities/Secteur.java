@@ -4,7 +4,6 @@ import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
-//Area
 @Entity
 @Table(name = "secteur")
 public class Secteur {
